@@ -1,8 +1,12 @@
-import { Navigate, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 const LayoutPublic = () => {
-  const auth = false
-  return auth ? <Navigate to='/dashboard' replace /> : <Outlet />
+  return (
+    <div className='bg-cyan-200'>
+      <div>Layout Public</div>
+      <Outlet />
+    </div>
+  )
 }
 
 export default LayoutPublic

@@ -1,8 +1,12 @@
-import { Navigate, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 
 const LayoutPrivate = () => {
-  const auth = true
-  return auth ? <Outlet /> : <Navigate to='/login' />
+  return (
+    <div className='bg-green-200'>
+      <div>Layout Private</div>
+      <Outlet />
+    </div>
+  )
 }
 
 export default LayoutPrivate
