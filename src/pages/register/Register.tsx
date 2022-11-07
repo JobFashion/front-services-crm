@@ -20,9 +20,9 @@ const Register = () => {
   }
   return (
     <div className='px-20 w-full flex flex-col'>
-      <div className='py-20 flex flex-col gap-20'>
+      <div className='py-16 flex flex-col gap-20'>
         <h2 className='text-4xl font-bold text-gray-800'>Crear Cuenta</h2>
-        <form className='py-6 flex flex-col'>
+        <form className='py-2 flex flex-col'>
           {focus && (
             <label className={` ${email.length > 3 ? 'text-[#2F4DFE]' : ' text-gray-500'}`}>
               Ingrese un email
@@ -60,6 +60,11 @@ const Register = () => {
             Inicia Sesion
           </span>
         </p>
+      </div>
+      <div className='flex flex-row w-full justify-center items-center gap-4'>
+        <hr className=' w-full' />
+        <span className='text-gray-500 font-semibold'>O</span>
+        <hr className='w-full' />
       </div>
       <div className='py-8'>
         <Button text='Continuar con Google' iconLeft={Google} />
