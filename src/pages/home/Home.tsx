@@ -12,7 +12,7 @@ const Home = () => {
           gestionar el servicios de atención al cliente y la resoluc ión de reclamos en un sólo
           lugar.
         </p>
-        <div className='flex flex-col gap-8 px-10'>
+        <div className='flex flex-col gap-8 px-10 py-6'>
           <Button text='Inicio Sesion' />
           <p>
             ¿No tienes cuenta?{' '}
