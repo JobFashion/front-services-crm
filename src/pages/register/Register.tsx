@@ -1,34 +1,51 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+import ArrowRight from '../../assets/icons_SVG/ArrowRight.svg'
+import Google from '../../assets/icons_SVG/Google.svg'
 import { Button } from '../../components/Buttons/Button'
 
 const Register = () => {
+  const navigate = useNavigate()
+  const [email, setEmail] = useState('')
+  const [focus, setFocus] = useState(false)
   return (
     <div className='px-20 w-full flex flex-col'>
-      <div className='py-24 flex flex-col gap-20'>
+      <div className='py-20 flex flex-col gap-20'>
         <h2 className='text-4xl font-bold text-gray-800'>Crear Cuenta</h2>
-        <form>
+        <form className='py-6 flex flex-col'>
+          {focus && (
+            <label className={` ${email.length > 3 ? 'text-[#2F4DFE]' : ' text-gray-500'}`}>
+              Ingrese un email
+            </label>
+          )}
+
           <input
-            className=' focus:outline-none border-b border-gray-500 py-3 px-6 w-9/12'
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(email.length ? true : false)}
+            onChange={e => setEmail(e.target.value)}
+            className='text-lg focus:outline-none border-b border-gray-500 py-3 px-5 w-9/12 placeholder:text-lg placeholder:text-gray-700'
             type='text'
             placeholder='Ingrese un email'
           />
+          <label className=' text-gray-500'>Assistive text</label>
         </form>
       </div>
-      <div className='flex flex-col gap-8 py-6'>
+      <div className='flex flex-col gap-8 py-6 font-semibold text-gray-700'>
         <p>Enviaremos un código de verificación al email que se ingresa arriba</p>
-        <Button
-          text='Siguiente'
-          iconRight='https://upload.wikimedia.org/wikipedia/commons/2/24/Arrow-right-512.png'
-          colorButton='bg-gray-300'
-        />
+        <Button text='Siguiente' iconRight={ArrowRight} colorButton='bg-gray-300' />
         <p>
-          ¿Ya tienes cuenta? <span className='text-[#2F4DFE] ml-2'>Inicia Sesion</span>
+          ¿Ya tienes cuenta?
+          <span
+            onClick={() => navigate('/login')}
+            className='text-[#2F4DFE] ml-2 cursor-pointer font-semibold'
+          >
+            Inicia Sesion
+          </span>
         </p>
       </div>
       <div className='py-8'>
-        <Button
-          text='Continuar con Google'
-          iconLeft='https://www.raqnbeauty.com/wp-content/uploads/2020/06/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png'
-        />
+        <Button text='Continuar con Google' iconLeft={Google} />
       </div>
     </div>
   )

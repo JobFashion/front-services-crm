@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom'
 
 import ImgLayout from '../../assets/img-layout.png'
+import { Button } from '../Buttons/Button'
 
 const LayoutPublic = () => {
   return (
@@ -10,7 +11,7 @@ const LayoutPublic = () => {
         <div>Logo</div>
         <div className='flex gap-20'>
           <button className='text-[#2F4DFE]'>Crear Cuenta</button>
-          <button className='text-white bg-[#2F4DFE] rounded-lg py-2 px-4'>Iniciar Sesion</button>
+          <Button text='Inicio Sesion' />
         </div>
       </div>
       <div className='flex flex-row-reverse w-full'>
