@@ -48,8 +48,8 @@ const Register = () => {
         <Button
           text='Siguiente'
           iconRight={validateEmail(email) ? ArrowRightWhite : ArrowRight}
-          colorButton={validateEmail(email) ? 'bg-[#2F4DFE]' : 'bg-gray-200'}
-          textColor={validateEmail(email) ? 'text-white' : 'text-gray-400'}
+          colorButton={validateEmail(email) ? 'bg-[#2F4DFE]' : 'bg-gray-300'}
+          textColor={validateEmail(email) ? 'text-white' : 'text-gray-500'}
         />
         <p>
           ¿Ya tienes cuenta?
