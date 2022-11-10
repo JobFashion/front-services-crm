@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 type Props = {
   text: string
   textColor?: string
@@ -5,7 +7,7 @@ type Props = {
   iconRight?: string
   iconLeft?: string
   textSize?: string
-  action?: () => void
+  redirect?: string
   size?: string
 }
 
@@ -16,27 +18,31 @@ export const Button = ({
   iconLeft,
   textSize,
   colorButton,
-  action,
+  redirect,
   size,
 }: Props) => {
   let sizeButton = ''
   switch (size) {
-    case 'medium':
+    case 'md':
       sizeButton = 'w-32'
       break
+    case '2xl':
+      sizeButton = 'w-60'
+      break
     default:
+      sizeButton = 'w-32'
       break
   }
   return (
-    <button
-      onClick={action}
+    <Link
+      to={`/${redirect ? redirect : '/'}`}
       className={`flex justify-center gap-2 items-center text-white ${sizeButton} ${textSize} ${textColor} ${
-        colorButton ? colorButton : 'bg-blup'
+        colorButton && colorButton
       }  rounded-lg py-3 px-4`}
     >
       {iconLeft && <img className={`w-5 h-5 flex items-center`} src={iconLeft} alt='' />}
       {text}
       {iconRight && <img className={`w-5 h-5 flex items-center`} src={iconRight} alt='' />}
-    </button>
+    </Link>
   )
 }

@@ -1,9 +1,8 @@
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { Button } from '../../components/Buttons/Button'
 
 const Home = () => {
-  const navigate = useNavigate()
   return (
     <div className='px-20 w-full flex flex-col'>
       <div className='py-24 flex flex-col gap-20'>
@@ -13,15 +12,12 @@ const Home = () => {
           lugar.
         </p>
         <div className='flex flex-col gap-8 px-10 py-6'>
-          <Button size='medium' text='Inicio Sesion' />
+          <Button redirect='login' colorButton='bg-blup' size='medium' text='Inicio Sesion' />
           <p>
             ¿No tienes cuenta?{' '}
-            <span
-              onClick={() => navigate('/register')}
-              className='text-blup ml-2 font-semibold cursor-pointer'
-            >
+            <Link to={'/register'} className='text-blup ml-2 font-semibold cursor-pointer'>
               Crear cuenta
-            </span>
+            </Link>
           </p>
         </div>
       </div>
