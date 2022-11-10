@@ -19,6 +19,7 @@ export const Button = ({
   textSize,
   colorButton,
   redirect,
+
   size,
 }: Props) => {
   let sizeButton = ''
@@ -38,6 +39,7 @@ export const Button = ({
       to={`/${redirect ? redirect : '/'}`}
       className={`flex justify-center gap-2 items-center text-white ${sizeButton} ${textSize} ${textColor} ${
         colorButton && colorButton
+
       }  rounded-lg py-3 px-4`}
     >
       {iconLeft && <img className={`w-5 h-5 flex items-center`} src={iconLeft} alt='' />}
