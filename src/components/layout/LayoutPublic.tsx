@@ -13,7 +13,7 @@ const LayoutPublic = () => {
           <span className='text-white text-xl'>Logo</span>
         </div>
         <div className='flex gap-20'>
-          <button className='text-[#2F4DFE]'>Crear Cuenta</button>
+          <button className='text-blup'>Crear Cuenta</button>
           <Button text='Inicio Sesion' />
         </div>
       </div>
