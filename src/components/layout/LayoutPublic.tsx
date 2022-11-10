@@ -5,13 +5,13 @@ import Navbar from '../Navbar/Navbar'
 
 const LayoutPublic = () => {
   return (
-    <div className='flex flex-col justify-center h-full w-full'>
+    <div className='flex flex-col justify-center overflow-y-hidden'>
       <Navbar />
-      <div className='flex flex-row-reverse w-full'>
+      <div className='flex flex-row w-full h-full'>
+        <Outlet />
         <div className='w-full h-full'>
           <img src={ImgLayout} alt='' />
         </div>
-        <Outlet />
       </div>
     </div>
   )
