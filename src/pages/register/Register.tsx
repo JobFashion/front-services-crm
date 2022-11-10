@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+
 import ArrowRight from '../../assets/icons_SVG/ArrowRight.svg'
 import ArrowRightWhite from '../../assets/icons_SVG/ArrowRightWhite.svg'
 import Google from '../../assets/icons_SVG/Google.svg'
