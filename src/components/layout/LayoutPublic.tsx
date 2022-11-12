@@ -3,7 +3,6 @@ import { Outlet, useNavigate } from 'react-router-dom'
 import ImgLayout from '../../assets/img-layout.png'
 import { Button } from '../Buttons/Button'
 
-import ImgLayout from '../../assets/img-layout.png'
 import Navbar from '../Navbar/Navbar'
 
 const LayoutPublic = () => {
