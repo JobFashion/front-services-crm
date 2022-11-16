@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
 
 import ArrowRight from '../../assets/icons_SVG/ArrowRight.svg'
 import ArrowRightWhite from '../../assets/icons_SVG/ArrowRightWhite.svg'
@@ -8,7 +9,6 @@ import { Button } from '../../components/Buttons/Button'
 import { validateEmail } from '../../helpers/Validations'
 
 const Register = () => {
-  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [focus, setFocus] = useState(false)
 
@@ -16,7 +16,7 @@ const Register = () => {
     <div className='px-20 w-full flex flex-col'>
       <div className='py-16 flex flex-col gap-20'>
         <h2 className='text-4xl font-bold text-gray-800'>Crear Cuenta</h2>
-        <form className='py-2 flex flex-col'>
+        <form className='flex flex-col'>
           {focus && (
             <label className={` ${email.length > 3 ? 'text-blup' : ' text-gray-500'}`}>
               Ingrese un email
@@ -48,12 +48,9 @@ const Register = () => {
         />
         <p>
           ¿Ya tienes cuenta?
-          <span
-            onClick={() => navigate('/login')}
-            className='text-blup ml-2 cursor-pointer font-semibold'
-          >
+          <Link to={'/login'} className='text-blup ml-2 cursor-pointer font-semibold'>
             Inicia Sesion
-          </span>
+          </Link>
         </p>
       </div>
       <div className='flex flex-row w-full justify-center items-center gap-4'>
@@ -62,7 +59,7 @@ const Register = () => {
         <hr className='w-full' />
       </div>
       <div className='py-8'>
-        <Button text='Continuar con Google' iconLeft={Google} />
+        <Button size='2xl' colorButton='bg-blup' text='Continuar con Google' iconLeft={Google} />
       </div>
     </div>
   )
